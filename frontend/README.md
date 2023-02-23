@@ -46,6 +46,41 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 _Code Formatting:_
+
 ```bash
 npx prettier --parser typescript --write "src/**/*.{ts,tsx}
+```
+
+_Code Linting: eslint can be run over our code via the following command_
+
+```bash
+npx eslint "src/**/*.{ts,tsx}"
+# eslint can also fix some of the issues it identifies via the use of the --fix flag as follows:
+npx eslint --fix "src/**/*.{ts,tsx}
+```
+
+### Bundle application
+
+To build a bundle of the frontend app, run the command:
+
+```bash
+npm run build
+
+# To analyze bundle
+npx source-map-explorer build/static/js/*.js
+```
+
+## Testing
+
+Run all tests: ```npm run test```
+
+
+#### Shortcuts 
+
+```bash 
+npm run analyze #to run the bundle analyzer
+npm run format #to run the formatting tooling and format the code
+npm run lint #to run the linting tooling
+
+
 ```

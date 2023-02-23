@@ -17,6 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "analyze": "npm run build && source-map-explorer \"build/static/js/*.js\"",
+    "format": "eslint --fix \"src/**/*.{ts,tsx}\" && prettier --parser typescript --write \"src/**/*.{ts,tsx}\"",
+    "lint": " eslint \"src/**/*.{ts,tsx}\" && prettier --parser typescript --list-different  \"src/**/*.{ts,tsx}\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -25,7 +28,11 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "prettier"
     ]
   },
   "prettier": {
@@ -44,6 +51,10 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.8.4"
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "^2.8.4",
+    "source-map-explorer": "^2.5.3"
   }
 }
